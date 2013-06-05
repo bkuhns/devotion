@@ -541,7 +541,8 @@ namespace DEVotion
 				this.Enabled = false;
 				System.Diagnostics.Process pr = new System.Diagnostics.Process();
 				pr.StartInfo.FileName = exe;
-				pr.StartInfo.Arguments = project.ProjectSource;
+                pr.StartInfo.WorkingDirectory = Path.GetDirectoryName(exe);
+				pr.StartInfo.Arguments = string.Format("\"{0}\"", project.ProjectSource);
 				pr.Start();
 				while (pr.HasExited == false)
 				{
