@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="LUA" Startblock="Code">
+	<FileTypes>
+		<FileType Extension=".lua" Name="LUA Source File"/>
+	</FileTypes>
+
+	<Block Name="Code" Style="Code" IsMultiline="true">
+		<!-- Keywords that can exist inside this block -->
+		<Scope Start="function" End="end" StartIsComplex="true" EndIsComplex="true" EndIsSeparator="true" Style="Scope" Text="function *** ..." CausesIndent="true" />
+		<Scope Start="for" End="end" StartIsComplex="true" EndIsComplex="true" EndIsSeparator="true" Style="Scope" Text="for *** ..." CausesIndent="true" />
+		<Scope Start="if" End="end" StartIsComplex="true" EndIsComplex="true" EndIsSeparator="true" Style="Scope" Text="if *** ..." CausesIndent="true" />
+		<Bracket Start="(" End=")" Style="Operator" />
+		<Keywords>
+			<PatternGroup Name="Keywords" Style="Keyword" CaseSensitive="true">
+				<Patterns>
+					and
+					break
+					do
+					else
+					elseif
+					end
+					for
+					function
+					if
+					in
+					local
+					not
+					or
+					repeat
+					return
+					then
+					until
+					while
+				</Patterns>
+			</PatternGroup>
+
+			<PatternGroup Name="Keywords2" Style="Keyword" CaseSensitive="true">
+				<Patterns>
+					assert
+					collectgarbage
+					dofile
+					error
+					_G
+					getfenv
+					getmetatable
+					gcinfo
+					ipairs
+					loadfile
+					loadstring
+					module
+					next
+					pairs
+					pcall
+					print
+					rawequal
+					rawget
+					rawset
+					require
+					setfenv
+					setmetatable
+					tonumber
+					tostring
+					type
+					unpack
+					_VERSION
+					xpcall
+
+					coroutine.create
+					coroutine.resume
+					coroutine.status
+					coroutine.wrap
+					coroutine.yield
+
+					debug.debug
+					debug.gethook
+					debug.getinfo
+					debug.getlocal
+					debug.getupvalue
+					debug.sethook
+					debug.setlocal
+					debug.setupvalue
+					debug.traceback
+
+					io.close
+					io.flush
+					io.input
+					io.lines
+					io.open
+					io.output
+					io.read
+					io.stderr
+					io.stdin
+					io.stdout
+					io.tmpfile
+					io.type
+					io.write
+					:close
+					:flush
+					:lines
+					:read
+					:seek
+					:write
+
+					math.abs
+					math.acos
+					math.asin
+					math.atan
+					math.atan2
+					math.ceil
+					math.cos
+					math.deg
+					math.exp
+					math.floor
+					math.frexp
+					math.ldexp
+					math.log
+					math.log10
+					math.max
+					math.min
+					math.fmod
+					math.pi
+					math.pow
+					math.rad
+					math.random
+					math.randomseed
+					math.sin
+					math.sqrt
+					math.tan
+
+					os.clock
+					os.date
+					os.difftime
+					os.execute
+					os.exit
+					os.getenv
+					os.remove
+					os.rename
+					os.setlocale
+					os.time
+					os.tmpname
+
+					package.cpath
+					package.loaded
+					package.loaders
+					package.loadlib
+					package.path
+					package.preload
+					package.seeall
+
+					string.byte
+					string.char
+					string.dump
+					string.find
+					string.format
+					string.gmatch
+					string.gsub
+					string.len
+					string.lower
+					string.rep
+					string.sub
+					string.upper
+
+					table.concat
+					table.getn
+					table.insert
+					table.remove
+					table.sort
+				</Patterns>
+			</PatternGroup>
+
+			<PatternGroup Name="Constants" Style="Constant">
+				<Patterns>
+					false
+					nil
+					true
+
+					love.key_unknown
+					love.key_first
+					love.key_backspace
+					love.key_tab
+					love.key_clear
+					love.key_return
+					love.key_pause
+					love.key_escape
+					love.key_space
+					love.key_exclaim
+					love.key_quotedbl
+					love.key_hash
+					love.key_dollar
+					love.key_ampersand
+					love.key_quote
+					love.key_leftparen
+					love.key_rightparen
+					love.key_asterisk
+					love.key_plus
+					love.key_comma
+					love.key_minus
+					love.key_period
+					love.key_slash
+					love.key_0
+					love.key_1
+					love.key_2
+					love.key_3
+					love.key_4
+					love.key_5
+					love.key_6
+					love.key_7
+					love.key_8
+					love.key_9
+					love.key_colon
+					love.key_semicolon
+					love.key_less
+					love.key_equals
+					love.key_greater
+					love.key_question
+					love.key_at
+					  
+					love.key_leftbracket
+					love.key_backslash
+					love.key_rightbracket
+					love.key_caret
+					love.key_underscore
+					love.key_backquote
+					love.key_a
+					love.key_b
+					love.key_c
+					love.key_d
+					love.key_e
+					love.key_f
+					love.key_g
+					love.key_h
+					love.key_i
+					love.key_j
+					love.key_k
+					love.key_l
+					love.key_m
+					love.key_n
+					love.key_o
+					love.key_p
+					love.key_q
+					love.key_r
+					love.key_s
+					love.key_t
+					love.key_u
+					love.key_v
+					love.key_w
+					love.key_x
+					love.key_y
+					love.key_z
+					love.key_delete
+					  
+					love.key_kp0
+					love.key_kp1
+					love.key_kp2
+					love.key_kp3
+					love.key_kp4
+					love.key_kp5
+					love.key_kp6
+					love.key_kp7
+					love.key_kp8
+					love.key_kp9
+					love.key_kp_period
+					love.key_kp_divide
+					love.key_kp_multiply
+					love.key_kp_minus
+					love.key_kp_plus
+					love.key_kp_enter
+					love.key_kp_equals
+					  
+					love.key_up
+					love.key_down
+					love.key_right
+					love.key_left
+					love.key_insert
+					love.key_home
+					love.key_end
+					love.key_pageup
+					love.key_pagedown
+					  
+					love.key_f1
+					love.key_f2
+					love.key_f3
+					love.key_f4
+					love.key_f5
+					love.key_f6
+					love.key_f7
+					love.key_f8
+					love.key_f9
+					love.key_f10
+					love.key_f11
+					love.key_f12
+					love.key_f13
+					love.key_f14
+					love.key_f15
+					  
+					love.key_numlock
+					love.key_capslock
+					love.key_scrollock
+					love.key_rshift
+					love.key_lshift
+					love.key_rctrl
+					love.key_lctrl
+					love.key_ralt
+					love.key_lalt
+					love.key_rmeta
+					love.key_lmeta
+					love.key_rsuper
+					love.key_lsuper
+					love.key_mode
+					love.key_compose
+					  
+					love.key_help
+					love.key_print
+					love.key_sysreq
+					love.key_break
+					love.key_menu
+					love.key_power
+					love.key_euro
+					love.key_undo
+					  
+					love.mouse_left
+					love.mouse_middle
+					love.mouse_right
+					love.mouse_wheelup
+					love.mouse_wheeldown
+					  
+					love.joystick_axis_horizontal
+					love.joystick_axis_vertical
+					love.joystick_hat_centered
+					love.joystick_hat_up
+					love.joystick_hat_right
+					love.joystick_hat_down
+					love.joystick_hat_left
+					love.joystick_hat_rightup
+					love.joystick_hat_rightdown
+					love.joystick_hat_leftup
+					love.joystick_hat_leftdown
+					  
+					love.align_left
+					love.align_center
+					love.align_right
+					love.align_top
+					love.align_bottom
+					  
+					love.mode_loop
+					love.mode_once
+					love.mode_bounce
+					  
+					love.event_message
+					love.event_gui
+					  
+					love.blend_normal
+					love.blend_additive
+					  
+					love.color_normal
+					love.color_modulate
+					  
+					love.file_read
+					love.file_write
+					love.file_append
+					  
+					love.default_font
+					  
+					love.draw_line
+					love.draw_fill
+					  
+					love.line_smooth
+					love.line_rough
+					  
+					love.audio_loop
+					love.audio_mode_mono
+					love.audio_mode_stereo
+					love.audio_quality_low
+					love.audio_quality_medium
+					love.audio_quality_high
+					love.audio_buffer_default
+					  
+					love.image_pad
+					love.image_optimize
+					love.image_pad_and_optimize
+					  
+					love.shape_circle
+					love.shape_polygon
+					love.joint_distance
+					love.joint_revolute
+					love.joint_prismatic
+					love.joint_mouse
+
+				</Patterns>
+			</PatternGroup>
+
+			<PatternGroup Name="Numbers" Style="Number">
+				<Pattern Text="([0-9]+)" IsComplex="true" />
+			</PatternGroup>
+
+			<PatternGroup Name="LoveKeywords" Style="LoveKeyword">
+				<Patterns>
+					love.audio.newSound
+					love.audio.newMusic
+					love.audio.play
+					love.audio.pause
+					love.audio.resume
+					love.audio.stop
+					love.audio.isPlaying
+					love.audio.isPaused
+					love.audio.setChannels
+					love.audio.setMode
+					love.audio.setVolume
+
+					love.filesystem.newFile
+					love.filesystem.newFile
+					love.filesystem.getWorkingDirectory
+					love.filesystem.getSaveDirectory
+					love.filesystem.exists
+					love.filesystem.isDirectory
+					love.filesystem.isFile
+					love.filesystem.mkdir
+					love.filesystem.remove
+					love.filesystem.open
+					love.filesystem.close
+					love.filesystem.read
+					love.filesystem.write
+					love.filesystem.lines
+					love.filesystem.eof
+					love.filesystem.tell
+					love.filesystem.seek
+					love.filesystem.enumerate
+					love.filesystem.require
+					love.filesystem.include
+					love.filesystem.load
+
+					love.graphics.newImage
+					love.graphics.newAnimation
+					love.graphics.newColor
+					love.graphics.newFont
+					love.graphics.checkMode
+					love.graphics.circle
+					love.graphics.draw
+					love.graphics.drawf
+					love.graphics.draws
+					love.graphics.getBackgroundColor
+					love.graphics.getBlendMode
+					love.graphics.getColorMode
+					love.graphics.getColor
+					love.graphics.getFont
+					love.graphics.getHeight
+					love.graphics.getLineStipple
+					love.graphics.getLineStyle
+					love.graphics.getLineWidth
+					love.graphics.getMaxPointSize
+					love.graphics.getModes
+					love.graphics.getPointSize
+					love.graphics.getScissor
+					love.graphics.getWidth
+					love.graphics.isCreated
+					love.graphics.line
+					love.graphics.newImageFont
+					love.graphics.newParticleSystem
+					love.graphics.point
+					love.graphics.polygon
+					love.graphics.quad
+					love.graphics.quad
+					love.graphics.rectangle
+					love.graphics.screenshot
+					love.graphics.setBackgroundColor
+					love.graphics.setBlendMode
+					love.graphics.setCaption
+					love.graphics.setColor
+					love.graphics.setColormode
+					love.graphics.setFont
+					love.graphics.setLine
+					love.graphics.setLineStipple
+					love.graphics.setLineStyle
+					love.graphics.setMode
+					love.graphics.setPoint
+					love.graphics.setPointSize
+					love.graphics.setPointStyle
+					love.graphics.setScissor
+					love.graphics.toggleFullscreen
+					love.graphics.triangle
+
+					love.joystick.close
+					love.joystick.getAxes
+					love.joystick.getAxis
+					love.joystick.getBall
+					love.joystick.getHat
+					love.joystick.getName
+					love.joystick.getNumAxes
+					love.joystick.getNumBalls
+					love.joystick.getNumButtons
+					love.joystick.getNumHats
+					love.joystick.getNumJoysticks
+					love.joystick.isDown
+					love.joystick.isOpen
+					love.joystick.open
+
+					love.keyboard.isDown
+
+					love.mouse.getPosition
+					love.mouse.getX
+					love.mouse.getY
+					love.mouse.isDown
+					love.mouse.isVisible
+					love.mouse.setPosition
+					love.mouse.setVisible
+
+					love.physics.newBody
+					love.physics.newCircleShape
+					love.physics.newDistanceJoint
+					love.physics.newMouseJoint
+					love.physics.newPolygonShape
+					love.physics.newPrismaticJoin
+					love.physics.newRectangleShape
+					love.physics.newRevoluteJoin
+					love.physics.newWorld
+
+					love.system.exit
+					love.system.getCodename
+					love.system.getPlatform
+					love.system.getVersion
+					love.system.grabInput
+					love.system.restart
+					love.system.resume
+					love.system.suspend
+
+					love.timer.getDelta
+					love.timer.getFPS
+					love.timer.getTime
+					love.timer.sleep
+				</Patterns>
+			</PatternGroup>
+		</Keywords>
+
+		<!-- Operators that can exist inside this block -->
+		<Operators>
+			<PatternGroup name="Operators" Style="Operator">
+				<!--<Pattern Text="." />-->
+				<Pattern Text="!" />
+				<Pattern Text=":" />
+				<Pattern Text="^" />
+				<Pattern Text="*" />
+				<Pattern Text="/" />
+				<Pattern Text="+" />
+				<Pattern Text="-" />
+				<Pattern Text="=" />
+				<Pattern Text=";" />
+				<Pattern Text="|" />
+				<Pattern Text=".." />
+			</PatternGroup>
+		</Operators>
+		<!-- Blocks that can exist inside this block -->
+		<ChildBlocks>
+			<Child Name="Multiline Comment" />
+			<Child Name="Singleline Comment" />
+			<Child Name="String" />
+			<Child Name="Char" />
+			<Child Name="Code" />
+		</ChildBlocks>
+	</Block>
+
+	<Block Name="Multiline Comment" Style="Comment"  IsMultiline="true">
+		<Scope Start="--[[" End="]]" Style="Comment" Text="--[[...]]"/>
+	</Block>
+	<Block Name="Singleline Comment" Style="Comment"  IsMultiline="false">
+		<Scope Start="--" End="" Style="Comment" />
+	</Block>
+	<Block Name="String" Style="String" IsMultiline="true">
+		<Scope Start="&quot;" End="&quot;" EscapeChar="\" Style="String" />
+	</Block>
+
+	<Block Name="Char" Style="String" EscapeChar="" IsMultiline="false">
+		<Scope Start="'" End="'"  EscapeChar="\" Style="String" />
+	</Block>
+
+	<Style Name="Code" ForeColor="" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Scope" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Comment" ForeColor="Green" BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="String" ForeColor="Teal" BackColor="" Bold="true" Italic="false" Underline="false" />
+	<Style Name="Number" ForeColor="Teal" BackColor="" Bold="true" Italic="false" Underline="false" />
+	<Style Name="Keyword" ForeColor="Blue" BackColor="" Bold="true" Italic="false" Underline="false" />
+	<Style Name="LoveKeyword" ForeColor="DarkRed" 	BackColor="" Bold="false" Italic="false" Underline="false" />
+	<Style Name="Constant" ForeColor="DarkGray" BackColor="" Bold="true" Italic="false" Underline="false" />
+
+</Language>

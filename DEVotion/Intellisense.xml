@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<signatures>
+	
+	<signature name="love.graphics.newImage">
+		<overload>
+			<arg name="filename">The filepath to the image file.</arg>
+		</overload>
+		<overload>
+			<arg name="filename">The filepath to the image file.</arg>
+			<arg name="mode">The type of image mode (padded, optimized, or both).</arg>
+		</overload>
+		<returns name="Image">An Image object containing the display data.</returns>
+	</signature>
+
+	<signature name="love.graphics.newAnimation">
+		<overload>
+			<arg name="image">The source Image for the Animation.</arg>
+			<returns name="Animation">An Animation object with no frames.</returns>
+		</overload>
+		<overload>
+			<arg name="image">The source Image for the Animation.</arg>
+			<arg name="fw">The width of each frame.</arg>
+			<arg name="fh">The height of each frame.</arg>
+			<arg name="delay">The delay (seconds) between each frame.</arg>
+			<arg name="frames">The number of frames to include. (0 = all)</arg>
+		</overload>
+		<returns name="Animation">An Animation.</returns>
+	</signature>
+
+	<signature name="love.graphics.newColor">
+		<overload>
+			<arg name="red">The amount of red.</arg>
+			<arg name="green">The amount of green.</arg>
+			<arg name="blue">The amount of blue.</arg>
+			<arg name="alpha">The amount of alpha.</arg>
+		</overload>
+		<overload>
+			<arg name="red">The amount of red.</arg>
+			<arg name="green">The amount of green.</arg>
+			<arg name="blue">The amount of blue.</arg>
+		</overload>
+		<returns name="Color">A Color object containing the color data.</returns>
+	</signature>
+
+	<signature name="love.graphics.newFont">
+		<overload>
+			<arg name="filename">The filepath to the font file.</arg>
+		</overload>
+		<overload>
+			<arg name="filename">The filepath to the font file.</arg>
+			<arg name="size">The size of the font.</arg>
+		</overload>
+		<returns name="Font">A Font object containing the font data.</returns>
+	</signature>
+
+	<signature name="love.graphics.newImageFont">
+		<overload>
+			<arg name="filename">The filepath to the font file.</arg>
+			<arg name="glyphs">A list of the characters as they are in the image.</arg>
+		</overload>
+		<overload>
+			<arg name="filename">The filepath to the font file.</arg>
+			<arg name="glyphs">A list of the characters as they are in the image.</arg>
+			<arg name="spacing">The spacing factor.</arg>
+		</overload>
+		<returns name="Font">A Font object containing the font data.</returns>
+	</signature>
+	
+</signatures>
