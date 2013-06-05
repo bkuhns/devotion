@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEVotion", "DEVotion\DEVotion.csproj", "{888EBAE8-96FF-42FE-8BB1-41FC71140E74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alsing.SyntaxBox.NET", "Alsing.SyntaxBox\Alsing.SyntaxBox.NET.csproj", "{19EF75B2-B414-4EB0-9486-160FAF93E62C}"
